@@ -1,6 +1,6 @@
 # 如何安装 PyInstaller
 
-> 翻译自 [PyInstaller 文档 v6.2.0 - installation](https://pyinstaller.org/en/v6.2.0/installation.html)
+> 翻译自 [PyInstaller 文档 v6.2.0 - How to Install PyInstaller](https://pyinstaller.org/en/v6.2.0/installation.html)
 
 PyInstaller 可作为普通 Python 软件包获取。已发布版本的源代码压缩包可从 [PyPi](https://pypi.python.org/pypi/PyInstaller/) 获取，但使用 [pip](http://www.pip-installer.org/) 安装最新版本更为方便：
 

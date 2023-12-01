@@ -1,5 +1,7 @@
 # 系统要求
 
+> 翻译自 [PyInstaller 文档 v6.2.0 - Requirements](https://pyinstaller.org/en/v6.2.0/requirements.html)
+
 ## Windows
 
 PyInstaller 可在 Windows 8 及更新版本中运行。它可以创建图形窗口应用程序（不需要命令窗口的应用程序）。

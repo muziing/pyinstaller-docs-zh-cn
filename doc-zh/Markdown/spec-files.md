@@ -1,6 +1,6 @@
 # 使用 Spec 文件
 
-> 翻译自 [PyInstaller 文档 v6.2.0 - spec-files](https://pyinstaller.org/en/v6.2.0/spec-files.html)
+> 翻译自 [PyInstaller 文档 v6.2.0 - Using Spec Files](https://pyinstaller.org/en/v6.2.0/spec-files.html)
 
 当运行
 
