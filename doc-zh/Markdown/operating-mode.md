@@ -47,9 +47,9 @@ PyInstaller 还了解许多主流 Python 包，包括 GUI 包 [Qt](https://www.q
 - 你可以编辑 `myscript.spec` 文件，PyInstaller 会在第一次为脚本运行时写入该文件。在 spec 文件中，你可以告知 PyInstaller 你的脚本所特有的代码模块。
 - 你可以编写 "hook" 钩子文件，告知 PyInstaller 隐式导入信息。如果你为一个软件包创建了一个 "hook" 钩子，而其他用户可能也会使用这个软件包，那么可以将你的钩子文件贡献给 PyInstaller。
 
-如果你的程序依赖于对某些数据文件的访问，你可以要求 PyInstaller 将它们也包含在捆绑包中。可以通过修改 spec 文件来实现这一点，这是[《使用 spec 文件》](./spec-files.md)中涉及的一个高级主题。
+如果你的程序依赖于对某些数据文件的访问，你可以要求 PyInstaller 将它们也包含在捆绑包中。可以通过修改 spec 文件来实现这一点，这是[*使用 Spec 文件*](./spec-files.md#使用-spec-文件)中涉及的一个高级主题。
 
-为了在运行时找到包含的文件，无论是否从捆绑包中运行，程序都需要能够在运行时了解其路径。这将在 [Run-time Information](https://pyinstaller.org/en/v6.2.0/runtime-information.html#run-time-information) 中介绍。
+为了在运行时找到包含的文件，无论是否从捆绑包中运行，程序都需要能够在运行时了解其路径。这将在[*运行时信息*](./runtime-information.md#运行时信息) 中介绍。
 
 PyInstaller *不会*包含当前操作系统的所有安装中都应该存在的库。例如在 GNU/Linux 中，它不会捆绑 `/lib` 或 `/usr/lib` 中的任何文件，因为它认为这些文件在每个系统中都能找到。
 

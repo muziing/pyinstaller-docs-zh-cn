@@ -84,9 +84,9 @@ Spec 文件中的语句会创建四个类的实例：`Analysis`、`PYZ`、`EXE` 
 
 ## 向软件包添加文件
 
-要将文件添加到捆绑软件包，你需要创建一个描述文件的列表，并将其提供给 `Analysis` 调用。捆绑到单个文件夹时（参阅 [Bundling to One Folder](https://pyinstaller.org/en/v6.2.0/operating-mode.html#bundling-to-one-folder)），添加的数据文件将被复制到包含可执行文件的文件夹中。捆绑到单个可执行文件时（参阅 [Bundling to One File](https://pyinstaller.org/en/v6.2.0/operating-mode.html#bundling-to-one-file)），添加文件的副本会被压缩到可执行文件中，并在执行前解压到 `_MEIxxxxxx` 临时文件夹。这意味着，使用单文件模式的可执行程序运行结束后，所有对添加文件做的修改都会丢失。
+要将文件添加到捆绑软件包，你需要创建一个描述文件的列表，并将其提供给 `Analysis` 调用。捆绑到单个文件夹时（参阅[*捆绑至单个文件夹*](./operating-mode.md#捆绑至单个文件夹)），添加的数据文件将被复制到包含可执行文件的文件夹中。捆绑到单个可执行文件时（参阅[*捆绑至单个文件*](./operating-mode.md#捆绑至单个文件)），添加文件的副本会被压缩到可执行文件中，并在执行前解压到 `_MEIxxxxxx` 临时文件夹。这意味着，使用单文件模式的可执行程序运行结束后，所有对添加文件做的修改都会丢失。
 
-无论哪种模式，要在运行时查找数据文件，参阅 [Run-time Information](https://pyinstaller.org/en/v6.2.0/runtime-information.html#run-time-information)。
+无论哪种模式，要在运行时查找数据文件，参阅[*运行时信息*](./runtime-information.md#运行时信息)。
 
 ### 添加数据文件
 
@@ -194,7 +194,7 @@ help_utf = help_bin.decode('UTF-8', 'ignore')
 
 为实现把二进制文件添加到捆绑包中，可以使用 `--add-binary` 命令选项，或将其作为列表添加至 spec 文件。在 spec 文件中，构建一个描述所需文件的元组列表，然后把这个元组列表赋值给 Analysis 的 `binaries=` 参数。
 
-添加二进制文件的方法与添加数据文件类似。如 [`Adding Binary Files`](https://pyinstaller.org/en/v6.2.0/spec-files.html#adding-binary-files) 中所述，每个元组应包含两个值：
+添加二进制文件的方法与添加数据文件类似。每个元组应包含两个值：
 
 - 第一个字符串指定当前系统中的一个或多个文件。
 - 第二个指定文件在运行时位于的文件夹名称。
@@ -221,6 +221,7 @@ pyinstaller --add-binary "/usr/lib/libiodbc.2.dylib:." myscript.py
 a = Analysis(...
          binaries=[ ( '/usr/lib/libiodbc.2.dylib', 'vendor' ) ],
          ...
+)
 ```
 
 与数据文件一样，如果要添加多个二进制文件，为提高可读性，可以在单独的语句中创建列表，并将列表名称传递。
@@ -274,16 +275,16 @@ exe = EXE(
 options = [
     # 警告控制
     ('W ignore', None, 'OPTION'),  # 禁用所有警告
-    ('W ignore::DeprecationWarning', None, 'OPTION')  # 禁用已弃用的警告
+    ('W ignore::DeprecationWarning', None, 'OPTION'),  # 禁用已弃用的警告
 
     # UTF-8 模式；除非明确启用/禁用，否则会根据本地语言 locale 自动启用
-    ('X utf8', None, 'OPTION),  # force UTF-8 mode on
-    ('X utf8=1', None, 'OPTION),  # force UTF-8 mode on
-    ('X utf8=0', None, 'OPTION),  # force UTF-8 mode off
+    ('X utf8', None, 'OPTION'),  # 强制启用 UTF-8 模式 on
+    ('X utf8=1', None, 'OPTION'),  # 强制启用 UTF-8 模式 on
+    ('X utf8=0', None, 'OPTION'),  # 强制禁用 UTF-8 模式
 
     # 开发者模式；默认禁用
-    ('X dev', None, 'OPTION),  # enable dev mode
-    ('X dev=1', None, 'OPTION),  # enable dev mode
+    ('X dev', None, 'OPTION'),  # 启用开发者模式
+    ('X dev=1', None, 'OPTION'),  # 启用开发者模式
 
     # 哈希种子
     ('hash_seed=0', None, 'OPTION'),  # 禁用哈希随机化；sys.flags.hash_randomization=0
@@ -461,9 +462,9 @@ foo_a = Analysis(['foo.py'],
         hiddenimports=[],
         hookspath=None)
 
-bar_a = Analysis(['bar.py'], etc., etc...
+bar_a = Analysis(['bar.py'], etc., etc...)
 
-zap_a = Analysis(['zap.py'], etc., etc...
+zap_a = Analysis(['zap.py'], etc., etc...)
 ```
 
 然后调用 MEGRE 方法处理这三个 Analysis 对象：
@@ -478,10 +479,10 @@ Analysis 对象 `foo_a`、`bar_a` 和 `zap_a` 会被修改，使得后两个对�
 
 ```python
 foo_pyz = PYZ(foo_a.pure)
-foo_exe = EXE(foo_pyz, foo_a.dependencies, foo_a.scripts, ... etc.
+foo_exe = EXE(foo_pyz, foo_a.dependencies, foo_a.scripts, ... etc.)
 
 bar_pyz = PYZ(bar_a.pure)
-bar_exe = EXE(bar_pyz, bar_a.dependencies, bar_a.scripts, ... etc.
+bar_exe = EXE(bar_pyz, bar_a.dependencies, bar_a.scripts, ... etc.)
 ```
 
 将合并后的 spec 文件保存为 `foobarzap.spec`，然后构建它：

@@ -91,7 +91,7 @@ pyinstaller --version
 安装完成后，这些命令就会进入可执行路径：
 
 - `pyinstaller` 是构建捆绑应用程序的主要命令。参阅 [Using PyInstaller](https://pyinstaller.org/en/v6.2.0/usage.html#using-pyinstaller)。
-- `pyi-makespec` 用于创建 spec 文件。参阅 [使用 Spec 文件](./spec-files.md)。
+- `pyi-makespec` 用于创建 spec 文件。参阅[*使用 Spec 文件*](./spec-files.md#使用-spec-文件)。
 - `pyi-archive_viewer` 用于检查捆绑应用程序。参阅 [Inspecting Archives](https://pyinstaller.org/en/v6.2.0/advanced-topics.html#inspecting-archives)。
 - `pyi-bindepend` 用于显示可执行文件的依赖关系。参阅 [Inspecting Executables](https://pyinstaller.org/en/v6.2.0/advanced-topics.html#inspecting-executables)。
 - `pyi-grab_version` 用于从 Windows 可执行文件中提取版本资源。参阅 [Capturing Windows Version Data](https://pyinstaller.org/en/v6.2.0/usage.html#capturing-windows-version-data)。
