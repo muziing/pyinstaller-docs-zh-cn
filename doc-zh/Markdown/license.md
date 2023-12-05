@@ -1,5 +1,7 @@
 # 许可证
 
+> 翻译自 [PyInstaller 文档 v6.2.0 - License](https://pyinstaller.org/en/v6.2.0/license.html)
+
 PyInstaller 基于双重许可方式发布，既使用 GPL 2.0 许可，有一种允许用它来构建商业产品的例外——如下所示——又对一些特定文件使用 Apache 2.0 许可。要查看 Apache 许可证适用于哪些文件、GPL 许可证适用于哪些文件，参阅 PyInstaller 源代码库根目录下的 *COPYING.txt* 文件。
 
 GPL 许可证例外情况简述：
