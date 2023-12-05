@@ -2,7 +2,7 @@
 
 1. [首页](README.md)
 2. [系统要求](requirements.md)
-3. [License](license.md)
+3. [许可证](license.md)
 4. [How to Contribute](contributing.md)
 5. [如何安装 PyInstaller](installation.md)
 6. [PyInstaller 的功能和原理](operating-mode.md)
