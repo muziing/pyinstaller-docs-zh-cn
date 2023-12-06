@@ -65,11 +65,11 @@ PyInstaller *不会*包含当前操作系统的所有安装中都应该存在的
 
 ## 单文件夹程序如何工作
 
-捆绑程序总是在 PyInstaller 引导加载程序（bootloader）中开始执行。这是文件夹中 `myscript` 可执行文件的核心。
+捆绑程序总是在 PyInstaller bootloader（引导加载程序）中开始执行。这是文件夹中 `myscript` 可执行文件的核心。
 
-PyInstaller 引导加载程序是当前活动平台（Windows、GNU/Linux、macOS 等）下的二进制可执行程序。当用户启动你的程序时，其实就是在运行引导加载程序。引导程序会创建一个临时 Python 环境，该 Python 解释器能在 `myscript` 文件夹中找到所有导入的模块和库。
+PyInstaller bootloader 是当前活动平台（Windows、GNU/Linux、macOS 等）下的二进制可执行程序。当用户启动你的程序时，其实就是在运行 bootloader。引导程序会创建一个临时 Python 环境，该 Python 解释器能在 `myscript` 文件夹中找到所有导入的模块和库。
 
-引导加载程序会启动一个 Python 解释器的拷贝来执行你的脚本。只要包含了所有必须的支持文件，一切都会正常进行。
+Bootloader 会启动一个 Python 解释器的拷贝来执行你的脚本。只要包含了所有必须的支持文件，一切都会正常进行。
 
 （这只是一个概述。更多详情，参阅 [The Bootstrap Process in Detail](https://pyinstaller.org/en/v6.2.0/advanced-topics.html#the-bootstrap-process-in-detail)。）
 
@@ -83,15 +83,15 @@ PyInstaller 能够把你的脚本及其依赖项都捆绑至一个名为 `myscri
 
 ## 单文件程序如何工作
 
-引导加载程序也是单文件捆绑包的核心。启动时，它会在该操作系统的临时文件夹位置创建一个名为 `_MEI{xxxxxx}` 的临时文件夹。其中 *xxxxxx* 是一串随机数。
+Bootloader 也是单文件捆绑包的核心。启动时，它会在该操作系统的临时文件夹位置创建一个名为 `_MEI{xxxxxx}` 的临时文件夹。其中 *xxxxxx* 是一串随机数。
 
-单可执行文件中包含了脚本使用的所有 Python 模块的嵌入式归档，以及所有非 Python 支持文件（比如 `.so` 文件）的压缩副本。引导加载程序会解压缩支持文件并将其副本写入临时文件夹。这个过程需要一点时间，这也正是单文件应用程序比单文件夹应用程序启动速度稍慢的原因。
+单可执行文件中包含了脚本使用的所有 Python 模块的嵌入式归档，以及所有非 Python 支持文件（比如 `.so` 文件）的压缩副本。Bootloader 会解压缩支持文件并将其副本写入临时文件夹。这个过程需要一点时间，这也正是单文件应用程序比单文件夹应用程序启动速度稍慢的原因。
 
 > Note
 >
 > PyInstaller 目前不会保留文件属性。参阅 [#3926](https://github.com/pyinstaller/pyinstaller/issues/3926)。
 
-创建临时文件夹后，引导加载程序将在临时文件夹中继续执行与单文件夹捆绑完全相同的程序。当捆绑代码运行结束时，引导加载程序会删除临时文件夹。
+创建临时文件夹后，bootloader 将在临时文件夹中继续执行与单文件夹捆绑完全相同的程序。当捆绑代码运行结束时，bootloader 会删除临时文件夹。
 
 （在 GNU/Linux 和相关系统中，挂载 `/tmp` 目录时可以选择 "no-execution" 选项。该选项与 PyInstaller 的单文件捆绑不兼容，因为后者需要在 `/tmp` 中执行代码。如果你了解目标环境，或可以使用 `--runtime-tmpdir` 作为一种变通办法。）
 
@@ -99,11 +99,11 @@ PyInstaller 能够把你的脚本及其依赖项都捆绑至一个名为 `myscri
 
 如果程序崩溃或被杀死（在 Unix 上 kill -9、在 Windows 上被任务管理器杀死、在 macOS 上 "强制退出"），`_MEIxxxxxx` 文件夹不会被删除。因此，如果你的应用程序经常崩溃，你的用户就会因为多个 `_MEIxxxxxx` 临时文件夹而耗费磁盘空间。
 
-使用 `--runtime-tmpdir` 命令行选项可以控制 `_MEIxxxxxx` 文件夹的位置。指定的路径将存储在可执行文件中，引导加载程序将在指定位置创建 `_MEIxxxxxx` 文件夹。详情请参阅 [Defining the Extraction Location](https://pyinstaller.org/en/v6.2.0/usage.html#defining-the-extraction-location)。
+使用 `--runtime-tmpdir` 命令行选项可以控制 `_MEIxxxxxx` 文件夹的位置。指定的路径将存储在可执行文件中，bootloader 将在指定位置创建 `_MEIxxxxxx` 文件夹。详情请参阅 [Defining the Extraction Location](https://pyinstaller.org/en/v6.2.0/usage.html#defining-the-extraction-location)。
 
 > Note
 >
-> *不要*给 Windows 上的单文件可执行文件赋予管理员权限（"以管理员身份运行此程序"）。恶意攻击者可能在引导加载程序准备临时文件夹中的一个共享库时破坏它。虽然这种可能性不大，但也并非绝无可能。一般来说，在分发特权程序时，应通过文件权限机制来防止共享库或可执行文件被篡改。否则，拥有这些文件写入权限的未提权进程可能会通过修改这些文件来提升自身权限。
+> *不要*给 Windows 上的单文件可执行文件赋予管理员权限（"以管理员身份运行此程序"）。恶意攻击者可能在 bootloader 准备临时文件夹中的一个共享库时破坏它。虽然这种可能性不大，但也并非绝无可能。一般来说，在分发特权程序时，应通过文件权限机制来防止共享库或可执行文件被篡改。否则，拥有这些文件写入权限的未提权进程可能会通过修改这些文件来提升自身权限。
 >
 > Note
 >
@@ -111,9 +111,9 @@ PyInstaller 能够把你的脚本及其依赖项都捆绑至一个名为 `myscri
 
 ## 使用控制台窗口
 
-默认情况下，引导加载程序会创建一个命令行控制台（GNU/Linux 和 macOS 中的终端窗口，Windows 中的命令窗口）。它将此窗口提供给 Python 解释器用于标准输入和输出。你的脚本中使用的 `print()` 和 `input()` 都会指向这里。Python 的错误信息和默认日志输出也会显示在控制台窗口中。
+默认情况下，bootloader 会创建一个命令行控制台（GNU/Linux 和 macOS 中的终端窗口，Windows 中的命令窗口）。它将此窗口提供给 Python 解释器用于标准输入和输出。你的脚本中使用的 `print()` 和 `input()` 都会指向这里。Python 的错误信息和默认日志输出也会显示在控制台窗口中。
 
-Windows 和 macOS 下的一个选项是告知 PyInstaller 不提供控制台窗口。引导加载程序启动 Python 时不会为标准输出或输入提供目标。当你的脚本有图形界面供用户输入，并能正确报告自己的诊断结果时，可以使用此选项。
+Windows 和 macOS 下的一个选项是告知 PyInstaller 不提供控制台窗口。bootloader 启动 Python 时不会为标准输出或输入提供目标。当你的脚本有图形界面供用户输入，并能正确报告自己的诊断结果时，可以使用此选项。
 
 如 Python 教程附录中的 [可执行的Python脚本](https://docs.python.org/zh-cn/3/tutorial/appendix.html#executable-python-scripts) 所述，对于 Windows 操作系统，扩展名为 *.pyw* 的文件会隐藏通常出现的控制台窗口。类似地，在 PyInstaller 中使用 `myscript.pyw` 脚本时，也不会出现控制台窗口。
 

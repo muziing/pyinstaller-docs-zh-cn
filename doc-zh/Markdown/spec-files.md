@@ -266,7 +266,7 @@ exe = EXE(
 - `'u'` 或 `'unbuffered'`：启用无缓冲的 stdout 与 stderr。相当于 Python 的 `-u` 命令行选项。
 - `'O'` 或 `'optimize'`：增加 `sys.flags.optimize` 的值，相当于 Python 的 `-O` 命令行选项。
 - `'W <arg>'`：传递 [Python 的 W 选项](https://docs.python.org/zh-cn/3/using/cmdline.html#cmdoption-W)，控制警告信息。
-- `'X <arg>'`：传递 [Python 的 X 选项](https://docs.python.org/zh-cn/3/using/cmdline.html#cmdoption-X)。其中用于控制 UFT-8 模式和开发者模式的 `utf8` 和 `dev` X 选项将由 PyInstaller 的引导加载程序明确解析，并在解释器预初始化时使用；其余的 X 选项只是传递给解释器配置。
+- `'X <arg>'`：传递 [Python 的 X 选项](https://docs.python.org/zh-cn/3/using/cmdline.html#cmdoption-X)。其中用于控制 UFT-8 模式和开发者模式的 `utf8` 和 `dev` X 选项将由 PyInstaller 的 bootloader 明确解析，并在解释器预初始化时使用；其余的 X 选项只是传递给解释器配置。
 - `'hash_seed=<value>'`：一个用于将打包应用程序中的 Python 哈希种子设置为固定值的选项。相当于 `PYTHONHASHSEED` 环境变量。在撰写本文时，该选项还没有作为 X 选项存在，因此作为自定义选项实现。
 
 进一步举例说明语法：

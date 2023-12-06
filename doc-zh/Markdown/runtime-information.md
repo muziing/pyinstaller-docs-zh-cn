@@ -12,7 +12,7 @@ else:
     print('running in a normal Python process')
 ```
 
-当捆绑应用程序启动时，引导加载程序会设置 `sys.frozen` 属性，并在 `sys._MEIPASS` 中存储捆绑文件夹的绝对路径。对于单文件夹捆绑，这是指捆绑中 `_internal` 文件夹的路径；对于单文件捆绑，则是引导加载程序创建的临时文件夹的路径（参阅[*单文件程序如何工作*](./operating-mode.md#单文件程序如何工作)）。
+当捆绑应用程序启动时，bootloader 会设置 `sys.frozen` 属性，并在 `sys._MEIPASS` 中存储捆绑文件夹的绝对路径。对于单文件夹捆绑，这是指捆绑中 `_internal` 文件夹的路径；对于单文件捆绑，则是 bootloader 创建的临时文件夹的路径（参阅[*单文件程序如何工作*](./operating-mode.md#单文件程序如何工作)）。
 
 应用程序运行时，可能需要访问以下位置的数据文件：
 
@@ -24,7 +24,7 @@ else:
 
 ## 使用 `__file__`
 
-当你的程序未被捆绑时，Python 变量 `__file__` 指向它所包含于的模块的当前路径。从捆绑脚本导入模块时，PyInstaller 引导加载程序会将模块的 `__file__` 属性设置为相对于捆绑文件夹的正确路径。
+当你的程序未被捆绑时，Python 变量 `__file__` 指向它所包含于的模块的当前路径。从捆绑脚本导入模块时，PyInstaller bootloader 会将模块的 `__file__` 属性设置为相对于捆绑文件夹的正确路径。
 
 例如，如果你从一个捆绑脚本中导入 `mypackage.mymodule`，那么该模块的 `__file__` 属性将会是 `sys._MEIPASS + 'mypackage/mymodule.pyc'`。因此，如果你在 `mypackage/file.dat` 处有一个数据文件，而又将它添加到了 `mypackage/file.dat` 处的捆绑包中，那么通过下面的代码就可以获取其路径（在捆绑和非捆绑的情况下均可）：
 
@@ -33,7 +33,7 @@ from os import path
 path_to_dat = path.abspath(path.join(path.dirname(__file__), 'file.dat'))
 ```
 
-在主脚本（`__main__` 模块）中，`__file__` 变量包含脚本文件的路径。在 Python 3.8 及更早版本中，这个路径是绝对路径或相对路径（取决于脚本是如何传递给 `python` 解释器的）；而在 Python 3.9 及更高版本中，它总是绝对路径。在捆绑脚本中，PyInstaller 引导加载程序总是将 `__main__` 模块中的 `__file__` 变量设置为捆绑目录中的绝对路径，就像字节编译的入口点脚本存在于那里一样。
+在主脚本（`__main__` 模块）中，`__file__` 变量包含脚本文件的路径。在 Python 3.8 及更早版本中，这个路径是绝对路径或相对路径（取决于脚本是如何传递给 `python` 解释器的）；而在 Python 3.9 及更高版本中，它总是绝对路径。在捆绑脚本中，PyInstaller bootloader 总是将 `__main__` 模块中的 `__file__` 变量设置为捆绑目录中的绝对路径，就像字节编译的入口点脚本存在于那里一样。
 
 例如，如果你的入口点脚本名为 `program.py`，那么捆绑脚本中的 `__file__` 属性将指向 `sys._MEIPASS + 'program.py'`。因此，可以直接使用 `sys._MEIPASS` 或通过主脚本内 `__file__` 的父路径来定位相对于主脚本的数据文件。
 
@@ -100,7 +100,7 @@ a = Analysis(...,
 
 ## 使用 `sys.executable` 与 `sys.argv[0]`
 
-运行普通 Python 脚本时，`sys.executable` 是执行程序，即 Python 解释器的路径。在被冻结的应用程序中，`sys.executable` 也是执行程序的路径，但此时的执行程序并非 Python；而是单文件应用程序中的引导加载程序或单文件夹应用程序中的可执行文件。这样就有了一种可靠的方法来获取用户启动冻结可执行文件的实际位置的方法。
+运行普通 Python 脚本时，`sys.executable` 是执行程序，即 Python 解释器的路径。在被冻结的应用程序中，`sys.executable` 也是执行程序的路径，但此时的执行程序并非 Python；而是单文件应用程序中的 bootloader 或单文件夹应用程序中的可执行文件。这样就有了一种可靠的方法来获取用户启动冻结可执行文件的实际位置的方法。
 
 `sys.argv[0]` 的值是用户命令中使用的名称或相对路径。它可能是相对路径，也可能是绝对路径，这取决于平台和应用程序的启动方式。
 

@@ -60,7 +60,7 @@ pip install .
 pip install -e .
 ```
 
-对于除 Windows、GNU/Linux 和 macOS 之外的平台，必须首先为该平台构建引导加载程序（bootloader）：参阅 [Building the Bootloader](https://pyinstaller.org/en/v6.2.0/bootloader-building.html#building-the-bootloader)。在构建引导加载程序之后，使用 `pip install .` 命令来完成安装。
+对于除 Windows、GNU/Linux 和 macOS 之外的平台，必须首先为该平台构建 bootloader（引导加载程序）：参阅 [Building the Bootloader](https://pyinstaller.org/en/v6.2.0/bootloader-building.html#building-the-bootloader)。在构建 bootloader 之后，使用 `pip install .` 命令来完成安装。
 
 ## 验证安装
 
