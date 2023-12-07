@@ -45,7 +45,7 @@ bundle_dir = path.abspath(path.dirname(__file__))
 path_to_dat = path.join(bundle_dir, 'other-file.dat')
 ```
 
-Or, if you'd rather use [pathlib](https://docs.python.org/zh-cn/3/library/pathlib.html):下面的示例将获取文件 `other-file.dat` 的路径，如果没有捆绑，该文件位于主脚本旁边；如果捆绑了，则位于捆绑文件夹内：
+或者，如果你更愿意使用 [pathlib](https://docs.python.org/zh-cn/3/library/pathlib.html)：
 
 ```python
 from pathlib import Path
@@ -88,7 +88,7 @@ PyInstaller --add-data="/path/to/file.dat:."
 PyInstaller --add-data="/path/to/my_library/file.dat:./my_library"
 ```
 
-不过，在这种情况下，改用 [spec 文件](./spec-files.md#使用-spec-文件) 并使用 `PyInstaller.utils.hooks.collect_data_files` 辅助函数要容易得多：
+不过，在这种情况下，改用 [spec 文件](./spec-files.md#使用-spec-文件)并使用 `PyInstaller.utils.hooks.collect_data_files` 辅助函数要容易得多：
 
 ```python
 from PyInstaller.utils.hooks import collect_data_files
