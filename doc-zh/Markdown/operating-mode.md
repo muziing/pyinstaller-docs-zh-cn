@@ -2,7 +2,7 @@
 
 > 翻译自 [PyInstaller 文档 v6.2.0 - What PyInstaller Does and How It Does It](https://pyinstaller.org/en/v6.2.0/operating-mode.html)
 
-本节介绍 PyInstaller 的基本思想。这些思想适用于所有平台。选项和特殊情况将在 [Using PyInstaller](https://pyinstaller.org/en/v6.2.0/usage.html#using-pyinstaller) 中介绍。
+本节介绍 PyInstaller 的基本思想。这些思想适用于所有平台。选项和特殊情况将在[*使用PyInstaller*](./usage.md#使用-pyinstaller) 中介绍。
 
 PyInstaller 读取你编写的 Python 脚本。它分析你的代码，找到脚本执行所需的其他模块和库。然后搜集所有这些文件的副本——包括活动的 Python 解释器！——并把它们与你的脚本放在一个文件夹中，或可选地放在一个可执行文件中。
 
@@ -83,7 +83,7 @@ PyInstaller 能够把你的脚本及其依赖项都捆绑至一个名为 `myscri
 
 ## 单文件程序如何工作
 
-Bootloader 也是单文件捆绑包的核心。启动时，它会在该操作系统的临时文件夹位置创建一个名为 `_MEI{xxxxxx}` 的临时文件夹。其中 *xxxxxx* 是一串随机数。
+Bootloader 也是单文件捆绑包的核心。启动时，它会在该操作系统的临时文件夹位置创建一个名为 `_MEIxxxxxx` 的临时文件夹。其中 *xxxxxx* 是一串随机数。
 
 单可执行文件中包含了脚本使用的所有 Python 模块的嵌入式归档，以及所有非 Python 支持文件（比如 `.so` 文件）的压缩副本。Bootloader 会解压缩支持文件并将其副本写入临时文件夹。这个过程需要一点时间，这也正是单文件应用程序比单文件夹应用程序启动速度稍慢的原因。
 
@@ -99,7 +99,7 @@ Bootloader 也是单文件捆绑包的核心。启动时，它会在该操作系
 
 如果程序崩溃或被杀死（在 Unix 上 kill -9、在 Windows 上被任务管理器杀死、在 macOS 上 "强制退出"），`_MEIxxxxxx` 文件夹不会被删除。因此，如果你的应用程序经常崩溃，你的用户就会因为多个 `_MEIxxxxxx` 临时文件夹而耗费磁盘空间。
 
-使用 `--runtime-tmpdir` 命令行选项可以控制 `_MEIxxxxxx` 文件夹的位置。指定的路径将存储在可执行文件中，bootloader 将在指定位置创建 `_MEIxxxxxx` 文件夹。详情请参阅 [Defining the Extraction Location](https://pyinstaller.org/en/v6.2.0/usage.html#defining-the-extraction-location)。
+使用 `--runtime-tmpdir` 命令行选项可以控制 `_MEIxxxxxx` 文件夹的位置。指定的路径将存储在可执行文件中，bootloader 将在指定位置创建 `_MEIxxxxxx` 文件夹。详情请参阅[*定义提取位置*](./usage.md#定义提取位置)。
 
 > Note
 >
