@@ -115,7 +115,7 @@ Bootloader 也是单文件捆绑包的核心。启动时，它会在该操作系
 
 Windows 和 macOS 下的一个选项是告知 PyInstaller 不提供控制台窗口。bootloader 启动 Python 时不会为标准输出或输入提供目标。当你的脚本有图形界面供用户输入，并能正确报告自己的诊断结果时，可以使用此选项。
 
-如 Python 教程附录中的 [可执行的Python脚本](https://docs.python.org/zh-cn/3/tutorial/appendix.html#executable-python-scripts) 所述，对于 Windows 操作系统，扩展名为 *.pyw* 的文件会隐藏通常出现的控制台窗口。类似地，在 PyInstaller 中使用 `myscript.pyw` 脚本时，也不会出现控制台窗口。
+如 Python 教程附录中的[*可执行的Python脚本*](https://docs.python.org/zh-cn/3/tutorial/appendix.html#executable-python-scripts)所述，对于 Windows 操作系统，扩展名为 *.pyw* 的文件会隐藏通常出现的控制台窗口。类似地，在 PyInstaller 中使用 `myscript.pyw` 脚本时，也不会出现控制台窗口。
 
 ## 隐藏源代码
 

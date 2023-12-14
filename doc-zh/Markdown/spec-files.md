@@ -168,7 +168,7 @@ helpmod
 
 ```python
 a = Analysis(...
-         datas= [ ('helpmod/help_data.txt', 'helpmod' ) ],
+         datas= [('helpmod/help_data.txt', 'helpmod' )],
          ...
          )
 ```
@@ -346,7 +346,7 @@ a.exclude_system_libraries(list_of_exceptions=['libexpat*', '*krb*'])
 
 ## `Splash` 目标
 
-For a splash screen to be displayed by the bootloader, the `Splash` target must be called at build time. This class can be added when the spec file is created with the command-line option `--splash IMAGE_FILE <--splash>`. By default, the option to display the optional text is disabled (`text_pos=None`). For more information about the splash screen, see [Splash Screen (Experimental)](https://pyinstaller.org/en/v6.2.0/usage.html#splash-screen) section. The `Splash` Target looks like this:
+For a splash screen to be displayed by the bootloader, the `Splash` target must be called at build time. This class can be added when the spec file is created with the command-line option `--splash IMAGE_FILE <--splash>`. By default, the option to display the optional text is disabled (`text_pos=None`). For more information about the splash screen, see [闪屏（*实验性功能*）](./usage.md#闪屏实验性功能) section. The `Splash` Target looks like this:
 
 ```python
 a = Analysis(...)

@@ -62,7 +62,7 @@ PyInstaller 分析 `myscript.py` 并：
     放置所有临时工作文件、`.log`、`.pyz` 等的位置（默认值：`./build`）。
 
 `-y, --noconfirm`
-    替换输出目录（默认值：`SPECPATH/dist/SPECNAME`），不请求确认。
+    覆盖输出目录中的原有内容（默认值：`SPECPATH/dist/SPECNAME`），不请求确认。
 
 `--upx-dir UPX_DIR`
     UPX 组件的位置（默认值：搜索可执行文件路径，即环境变量中的 `PATH`）。
@@ -146,7 +146,7 @@ PyInstaller 分析 `myscript.py` 并：
     对可执行文件和共享库应用符号条带表（symbol-table strip）。不建议在 Windows 环境下使用。
 
 `--noupx`
-    即使UPX 可用也不要使用。在 Windows 和 \*nix 下效果有所不同。
+    即使有可用的 UPX 也不要使用。在 Windows 和 \*nix 下效果有所不同。
 
 `--upx-exclude FILE`
     防止二进制文件在使用 upx 时被压缩。如果 upx 在压缩过程中破坏了某些二进制文件，通常可以使用此功能。FILE 是二进制文件不含路径的文件名。该选项可多次使用。
