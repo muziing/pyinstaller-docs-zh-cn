@@ -3,7 +3,7 @@
 ## 翻译信息
 
 - 翻译自： [PyInstaller 文档 v6.2.0 - PyInstaller Manual](https://pyinstaller.org/en/v6.2.0/index.html)
-- 译者：[muzing](https://github.com/muziing) [<muzi2001@foxmail.com>](mailto:muzi2001@foxmail.com)
+- 译者：[muzing](https://github.com/muziing) [\<muzi2001@foxmail.com\>](mailto:muzi2001@foxmail.com)
 - 文档源码仓库：<https://github.com/muziing/pyinstaller-docs-zh-cn>
 
 ## PyInstaller 简介
