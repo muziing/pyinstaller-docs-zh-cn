@@ -76,7 +76,7 @@ PyInstaller 有时会以引发一个 Python 异常而终止。大多数情况下
 如果使用了 `--onefile`，但程序运行失败，出现类似这样的错误：
 
 ```shell
-./hello: error while loading shared libraries: libz.so.1: 
+./hello: error while loading shared libraries: libz.so.1:
 failed to map segment from shared object: Operation not permitted
 ```
 
