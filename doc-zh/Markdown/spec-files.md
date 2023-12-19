@@ -1,6 +1,6 @@
 # 使用 Spec 文件
 
-> 翻译自 [PyInstaller 文档 v6.2.0 - Using Spec Files](https://pyinstaller.org/en/v6.2.0/spec-files.html)
+> 翻译自 [PyInstaller 文档 v6.3.0 - Using Spec Files](https://pyinstaller.org/en/v6.3.0/spec-files.html)
 
 当运行
 
@@ -74,7 +74,7 @@ Spec 文件中的语句会创建四个类的实例：`Analysis`、`PYZ`、`EXE` 
   - `pathex`：用于搜索导入的路径列表（比如使用 `PYTHONPATH`），包括由 `--paths` 选项给出的路径；
   - `binaries`：脚本所需的非 Python 模块，包括由 `--add-binary` 选项给出的名称；
   - `datas`：应用程序中包含的非二进制文件，包括由 `--add-data` 选项给出的文件名；
-- 类 `PYZ` 的实例是一个 `.pyz` 归档文件（在 [Inspecting Archives](https://pyinstaller.org/en/v6.2.0/advanced-topics.html#inspecting-archives) 中描述），它包含 `a.pure` 中的所有 Python 模块。
+- 类 `PYZ` 的实例是一个 `.pyz` 归档文件（在 [Inspecting Archives](https://pyinstaller.org/en/v6.3.0/advanced-topics.html#inspecting-archives) 中描述），它包含 `a.pure` 中的所有 Python 模块。
 - 根据分析的脚本和 `PYZ` 归档创建一个 `EXE` 实例。该对象创建可执行文件。
 - 一个 `COLLECT` 的实例，从其他所有部分创建输出文件夹。
 
@@ -228,7 +228,7 @@ a = Analysis(...
 
 ### 添加文件的高级方法
 
-PyInstaller 支持一种更高级（也更复杂）的将文件添加到捆绑包的方法，可能对特殊情况有用。参阅下方的 [The Table of Contents (TOC) lists and the Tree Class](https://pyinstaller.org/en/v6.2.0/advanced-topics.html#the-toc-and-tree-classes)。
+PyInstaller 支持一种更高级（也更复杂）的将文件添加到捆绑包的方法，可能对特殊情况有用。参阅下方的 [The Table of Contents (TOC) lists and the Tree Class](https://pyinstaller.org/en/v6.3.0/advanced-topics.html#the-toc-and-tree-classes)。
 
 ## 指定 Python 解释器选项
 
@@ -262,7 +262,7 @@ exe = EXE(
 
 该机制支持以下选项：
 
-- `'v'` 或 `'verbose'`：增加 `sys.flags.verbose` 的值，这会导致每个模块初始化时都向 stdout 中写入信息。该选项等同于 Python 的 `-v` 命令行选项。当通过 PyInstaller 自带的 `--debug imports` 选项启用 [verbose 导入](https://pyinstaller.org/en/v6.2.0/when-things-go-wrong.html#getting-python-s-verbose-imports)时，它将自动启用。
+- `'v'` 或 `'verbose'`：增加 `sys.flags.verbose` 的值，这会导致每个模块初始化时都向 stdout 中写入信息。该选项等同于 Python 的 `-v` 命令行选项。当通过 PyInstaller 自带的 `--debug imports` 选项启用 [verbose 导入](./when-things-go-wrong.md#获取-python-的详尽导入信息)时，它将自动启用。
 - `'u'` 或 `'unbuffered'`：启用无缓冲的 stdout 与 stderr。相当于 Python 的 `-u` 命令行选项。
 - `'O'` 或 `'optimize'`：增加 `sys.flags.optimize` 的值，相当于 Python 的 `-O` 命令行选项。
 - `'W <arg>'`：传递 [Python 的 W 选项](https://docs.python.org/zh-cn/3/using/cmdline.html#cmdoption-W)，控制警告信息。
@@ -398,7 +398,7 @@ On Windows/macOS images with per-pixel transparency are supported. This allows n
 
 The splash target can be configured in various ways. The constructor of the `Splash` target is as follows:
 
-<https://pyinstaller.org/en/v6.2.0/spec-files.html#PyInstaller.building.splash.Splash.__init__>
+<https://pyinstaller.org/en/v6.3.0/spec-files.html#PyInstaller.building.splash.Splash.__init__>
 
 ## 多软件包捆绑
 
@@ -493,7 +493,7 @@ pyinstaller foobarzap.spec
 
 输出至 `dist` 文件夹的将是全部三个应用程序，但应用程序 `dist/bar` 和 `dist/zap` 将引用 `dist/foo` 中的内容以共享依赖关系。
 
-记住，spec 文件是可执行的 Python。在创建 Analysis 对象和执行 `PYZ`、`EXE`、`COLLECT` 语句时，可以使用所有的 Python 工具（`for`、`with` 以及标准库 `sys` 和 `io` 的成员）。你可能还需要了解 [The Table of Contents (TOC) lists and the Tree Class](https://pyinstaller.org/en/v6.2.0/advanced-topics.html#the-toc-and-tree-classes)。
+记住，spec 文件是可执行的 Python。在创建 Analysis 对象和执行 `PYZ`、`EXE`、`COLLECT` 语句时，可以使用所有的 Python 工具（`for`、`with` 以及标准库 `sys` 和 `io` 的成员）。你可能还需要了解 [The Table of Contents (TOC) lists and the Tree Class](https://pyinstaller.org/en/v6.3.0/advanced-topics.html#the-toc-and-tree-classes)。
 
 ## Spec 文件中可用的全局变量
 

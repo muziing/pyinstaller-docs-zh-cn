@@ -1,6 +1,6 @@
 # PyInstaller 的功能和原理
 
-> 翻译自 [PyInstaller 文档 v6.2.0 - What PyInstaller Does and How It Does It](https://pyinstaller.org/en/v6.2.0/operating-mode.html)
+> 翻译自 [PyInstaller 文档 v6.3.0 - What PyInstaller Does and How It Does It](https://pyinstaller.org/en/v6.3.0/operating-mode.html)
 
 本节介绍 PyInstaller 的基本思想。这些思想适用于所有平台。选项和特殊情况将在[*使用PyInstaller*](./usage.md#使用-pyinstaller) 中介绍。
 
@@ -71,7 +71,7 @@ PyInstaller bootloader 是当前活动平台（Windows、GNU/Linux、macOS 等�
 
 Bootloader 会启动一个 Python 解释器的拷贝来执行你的脚本。只要包含了所有必须的支持文件，一切都会正常进行。
 
-（这只是一个概述。更多详情，参阅 [The Bootstrap Process in Detail](https://pyinstaller.org/en/v6.2.0/advanced-topics.html#the-bootstrap-process-in-detail)。）
+（这只是一个概述。更多详情，参阅 [The Bootstrap Process in Detail](https://pyinstaller.org/en/v6.3.0/advanced-topics.html#the-bootstrap-process-in-detail)。）
 
 ## 捆绑至单个文件
 

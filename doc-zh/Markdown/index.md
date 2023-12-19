@@ -2,7 +2,7 @@
 
 ## 翻译信息
 
-- 翻译自： [PyInstaller 文档 v6.2.0 - PyInstaller Manual](https://pyinstaller.org/en/v6.2.0/index.html)
+- 翻译自： [PyInstaller 文档 v6.3.0 - PyInstaller Manual](https://pyinstaller.org/en/v6.3.0/index.html)
 - 译者：[muzing](https://github.com/muziing) [\<muzi2001@foxmail.com\>](mailto:muzi2001@foxmail.com)
 - 文档源码仓库：<https://github.com/muziing/pyinstaller-docs-zh-cn>
 
@@ -10,7 +10,7 @@
 
 | 键   | 值                                                           |
 | ---- | ------------------------------------------------------------ |
-| 版本 | PyInstaller 6.2.0                                            |
+| 版本 | PyInstaller 6.3.0                                            |
 | 主页 | <https://pyinstaller.org/>                                   |
 | 联系 | [pyinstaller@googlegroups.com](mailto:pyinstaller@googlegroups.com) |
 | 作者 | David Cortesi, based on structure by Giovanni Bajo & William Caban, based on Gordon McMillan’s manual |

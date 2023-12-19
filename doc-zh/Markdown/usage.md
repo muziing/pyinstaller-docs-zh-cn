@@ -1,6 +1,6 @@
 # 使用 PyInstaller
 
-> 翻译自 [PyInstaller 文档 v6.2.0 - Using PyInstaller](https://pyinstaller.org/en/v6.2.0/usage.html)
+> 翻译自 [PyInstaller 文档 v6.3.0 - Using PyInstaller](https://pyinstaller.org/en/v6.3.0/usage.html)
 
 `pyinstaller` 命令的语法为：
 
@@ -320,7 +320,7 @@ pyi_splash.update_text("Second time's a charm!")
 pyi_splash.close()
 ```
 
-当然，导入应放在一个 `try ... except` 块中，以防程序作为普通 Python 脚本被外部使用，而没有 bootloader。详细说明参见 [pyi_splash Module (Detailed)](https://pyinstaller.org/en/v6.2.0/advanced-topics.html#pyi-splash-module)。
+当然，导入应放在一个 `try ... except` 块中，以防程序作为普通 Python 脚本被外部使用，而没有 bootloader。详细说明参见 [pyi_splash Module (Detailed)](https://pyinstaller.org/en/v6.3.0/advanced-topics.html#pyi-splash-module)。
 
 ## 定义提取位置
 
@@ -368,7 +368,7 @@ PyInstaller 从公共同步文件夹中读取脚本，但会将其工作文件�
 
 如果你在多个平台（例如 GNU/Linux 和 macOS）上共享同一个家目录（home），则需要在每个平台上将 PYINSTALLER_CONFIG_DIR 环境变量设置为不同的值，否则 PyInstaller 可能会缓存一个平台的文件，并在另一个平台上使用它们，因为默认情况下，它使用你的家目录的子目录作为缓存位置。
 
-据说可以使用免费的 [Wine](http://www.winehq.org/) 环境在 GNU/Linux 下为 Windows 进行交叉开发。需要更多细节详情，参阅[How to Contribute](https://pyinstaller.org/en/v6.2.0/contributing.html)。
+据说可以使用免费的 [Wine](http://www.winehq.org/) 环境在 GNU/Linux 下为 Windows 进行交叉开发。需要更多细节详情，参阅[*贡献指南*](contributing.md)。
 
 ## 捕获 Windows 版本数据
 
@@ -446,7 +446,7 @@ GNU/Linux 标准库（比如 `glibc`）分为 64 位和 32 位两个版本，且
 2. 在应用程序的安装程序中包含一个 VCRedist 包（可重新发布的软件包文件）。这是Microsoft 推荐的方法，参阅上述链接中的 “Distributing Software that uses the Universal CRT“，第 2 和第 3 条。
 3. 安装 [Windows 软件开发工具包（SDK）](https://developer.microsoft.com/zh-cn/windows/downloads/windows-sdk/)，并扩展 .spec 文件以包含所需的 DLL，参阅上述链接第 6 条中的 "Distributing Software that uses the Universal CRT"。
 
-    如果你认为 PyInstaller 应该自己完成这项工作，请[帮助改进](https://pyinstaller.org/en/v6.2.0/contributing.html#how-to-contribute) PyInstaller。
+    如果你认为 PyInstaller 应该自己完成这项工作，请[帮助改进](contributing.md#贡献指南) PyInstaller。
 
 ### macOS
 
@@ -462,7 +462,7 @@ GNU/Linux 标准库（比如 `glibc`）分为 64 位和 32 位两个版本，且
 
 > Note
 >
-> 由于 macOS 10.15 Catalina 取消了对 32 位应用程序的支持，本节内容已基本过时。关于现代版本 macOS 的64位多架构操作系统支持，请参阅[此处](https://pyinstaller.org/en/v6.2.0/feature-notes.html#macos-multi-arch-support)。不过，PyInstaller 然支持构建 32 位的 bootloader，而且 python.org 上仍提供（部分）Python 3.7 的 32 位/64 位安装包。PyInstaller 从 v6.0 其结束了对 Python 3.7 的支持。
+> 由于 macOS 10.15 Catalina 取消了对 32 位应用程序的支持，本节内容已基本过时。关于现代版本 macOS 的64位多架构操作系统支持，请参阅[此处](https://pyinstaller.org/en/v6.3.0/feature-notes.html#macos-multi-arch-support)。不过，PyInstaller 然支持构建 32 位的 bootloader，而且 python.org 上仍提供（部分）Python 3.7 的 32 位/64 位安装包。PyInstaller 从 v6.0 其结束了对 Python 3.7 的支持。
 
 旧版本的 macOS 同时支持 32 位和 64位可执行文件。PyInstaller 使用用于执行它的 Python 解释器的字长构建应用程序。这通常是一个 64 位版本的 Python，从而产生一个 64 位可执行文件。要创建 32 位可执行文件，在 32 位 Python 下运行 PyInstaller。
 
@@ -505,7 +505,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 另外，PyInstaller 还支持将打开文档/URL 事件转换为参数，附加到 `sys.argv` 中。这只适用于在应用程序启动期间接收到的事件，即，在你的冻结代码启动之前。要处理应用程序已运行时派发的事件，你需要设置相应的事件处理程序。
 
-更多细节，参阅[此节](https://pyinstaller.org/en/v6.2.0/feature-notes.html#macos-event-forwarding-and-argv-emulation)。
+更多细节，参阅[此节](https://pyinstaller.org/en/v6.3.0/feature-notes.html#macos-event-forwarding-and-argv-emulation)。
 
 ### AIX
 

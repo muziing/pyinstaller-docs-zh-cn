@@ -1,6 +1,6 @@
 # 运行时信息
 
-> 翻译自 [PyInstaller 文档 v6.2.0 - Run-time Information](https://pyinstaller.org/en/v6.2.0/runtime-information.html)
+> 翻译自 [PyInstaller 文档 v6.3.0 - Run-time Information](https://pyinstaller.org/en/v6.3.0/runtime-information.html)
 
 你的应用程序在捆绑包中运行时，行为应当和从源码运行时完全一样。不过，你可能希望在运行时了解应用程序是在正在源码中运行还是已被捆绑（"frozen"）。你可以使用下面的代码来检查 "在捆绑包里吗？"：
 

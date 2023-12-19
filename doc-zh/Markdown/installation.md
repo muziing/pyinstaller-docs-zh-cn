@@ -1,6 +1,6 @@
 # 如何安装 PyInstaller
 
-> 翻译自 [PyInstaller 文档 v6.2.0 - How to Install PyInstaller](https://pyinstaller.org/en/v6.2.0/installation.html)
+> 翻译自 [PyInstaller 文档 v6.3.0 - How to Install PyInstaller](https://pyinstaller.org/en/v6.3.0/installation.html)
 
 PyInstaller 可作为普通 Python 软件包获取。已发布版本的源代码压缩包可从 [PyPi](https://pypi.python.org/pypi/PyInstaller/) 获取，但使用 [pip](http://www.pip-installer.org/) 安装最新版本更为方便：
 
@@ -60,7 +60,7 @@ pip install .
 pip install -e .
 ```
 
-对于除 Windows、GNU/Linux 和 macOS 之外的平台，必须首先为该平台构建 bootloader（引导加载程序）：参阅 [Building the Bootloader](https://pyinstaller.org/en/v6.2.0/bootloader-building.html#building-the-bootloader)。在构建 bootloader 之后，使用 `pip install .` 命令来完成安装。
+对于除 Windows、GNU/Linux 和 macOS 之外的平台，必须首先为该平台构建 bootloader（引导加载程序）：参阅 [*构建 Bootloader*](https://pyinstaller.org/en/v6.3.0/bootloader-building.html#building-the-bootloader)。在构建 bootloader 之后，使用 `pip install .` 命令来完成安装。
 
 ## 验证安装
 
@@ -92,7 +92,7 @@ pyinstaller --version
 
 - `pyinstaller` 是构建捆绑应用程序的主要命令。参阅[*使用 PyInstaller*](./usage.md#使用-pyinstaller)。
 - `pyi-makespec` 用于创建 spec 文件。参阅[*使用 Spec 文件*](./spec-files.md#使用-spec-文件)。
-- `pyi-archive_viewer` 用于检查捆绑应用程序。参阅 [Inspecting Archives](https://pyinstaller.org/en/v6.2.0/advanced-topics.html#inspecting-archives)。
-- `pyi-bindepend` 用于显示可执行文件的依赖关系。参阅 [Inspecting Executables](https://pyinstaller.org/en/v6.2.0/advanced-topics.html#inspecting-executables)。
+- `pyi-archive_viewer` 用于检查捆绑应用程序。参阅 [Inspecting Archives](https://pyinstaller.org/en/v6.3.0/advanced-topics.html#inspecting-archives)。
+- `pyi-bindepend` 用于显示可执行文件的依赖关系。参阅 [Inspecting Executables](https://pyinstaller.org/en/v6.3.0/advanced-topics.html#inspecting-executables)。
 - `pyi-grab_version` 用于从 Windows 可执行文件中提取版本资源。参阅[*捕获 Windows 版本数据*](./usage.md#捕获-windows-版本数据)。
 - `pyi-set_version` 可用于将先前提取的版本资源应用于现有的 Windows 可执行文件。
