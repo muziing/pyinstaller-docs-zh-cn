@@ -1,20 +1,22 @@
 # PyInstaller 文档 - 简体中文翻译
 
-> [PyInstaller 文档](https://pyinstaller.org) 非官方简体中文翻译，基于 v6.2.0。
+> [PyInstaller 文档](https://pyinstaller.org) 非官方简体中文翻译，基于 v6.3.0。
 >
 > Simplified Chinese Translation of [PyInstaller Documentation](https://pyinstaller.org) (Unofficial).
 
 ## 目录
 
-1. [系统要求](./doc-zh/Markdown/requirements.md)
-2. [许可证](./doc-zh/Markdown/license.md)
-3. [贡献指南](./doc-zh/Markdown/contributing.md)
-4. [如何安装 PyInstaller](./doc-zh/Markdown/installation.md)
-5. [PyInstaller 的功能和原理](./doc-zh/Markdown/operating-mode.md)
-6. [使用 PyInstaller](./doc-zh/Markdown/usage.md)
-7. [运行时信息](./doc-zh/Markdown/runtime-information.md)
-8. [使用 Spec 文件](./doc-zh/Markdown/spec-files.md)
-9. 翻译工作仍在进行中，敬请期待……
+1. [首页](./doc-zh/Markdown/index.md)
+2. [系统要求](./doc-zh/Markdown/requirements.md)
+3. [许可证](./doc-zh/Markdown/license.md)
+4. [贡献指南](./doc-zh/Markdown/contributing.md)
+5. [如何安装 PyInstaller](./doc-zh/Markdown/installation.md)
+6. [PyInstaller 的功能和原理](./doc-zh/Markdown/operating-mode.md)
+7. [使用 PyInstaller](./doc-zh/Markdown/usage.md)
+8. [运行时信息](./doc-zh/Markdown/runtime-information.md)
+9. [使用 Spec 文件](./doc-zh/Markdown/spec-files.md)
+10. [当发生错误时](./doc-zh/Markdown/when-things-go-wrong.md)
+11. 翻译工作仍在进行中，敬请期待……
 
 ## 翻译声明
 
