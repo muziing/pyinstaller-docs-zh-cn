@@ -16,7 +16,8 @@
 8. [运行时信息](./doc-zh/Markdown/runtime-information.md)
 9. [使用 Spec 文件](./doc-zh/Markdown/spec-files.md)
 10. [当发生错误时](./doc-zh/Markdown/when-things-go-wrong.md)
-11. 翻译工作仍在进行中，敬请期待……
+11. [进阶话题](./doc-zh/Markdown/advanced-topics.md)
+12. 翻译工作仍在进行中，敬请期待……
 
 ## 翻译声明
 
