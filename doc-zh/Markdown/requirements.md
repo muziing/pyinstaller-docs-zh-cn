@@ -20,7 +20,7 @@ PyInstaller 需要 `ldd` 终端应用程序来发现每个程序或共享库所�
 
 有用户报告称在这些平台上成功运行了 PyInstaller，但官方没有在这些平台上进行测试。需要可以使用 `ldd` 和 `objdump` 命令。
 
-每个捆绑应用程序都包含一个 bootloader 的副本，这是一个用于设置应用程序并启动它的程序（参阅 [The Bootstrap Process in Detail](https://pyinstaller.org/en/v6.3.0/advanced-topics.html#the-bootstrap-process-in-detail)）。
+每个捆绑应用程序都包含一个 bootloader 的副本，这是一个用于设置应用程序并启动它的程序（参阅 [*Bootstrap 流程详解*](./advanced-topics.md#bootstrap-流程详解)）。
 
 使用 [pip](http://www.pip-installer.org/) 安装 PyInstaller 时，安装程序会尝试为该平台构建 bootloader。如果成功，安装将继续，PyInstaller 就可以使用了。
 

@@ -320,7 +320,7 @@ pyi_splash.update_text("Second time's a charm!")
 pyi_splash.close()
 ```
 
-当然，导入应放在一个 `try ... except` 块中，以防程序作为普通 Python 脚本被外部使用，而没有 bootloader。详细说明参见 [pyi_splash Module (Detailed)](https://pyinstaller.org/en/v6.3.0/advanced-topics.html#pyi-splash-module)。
+当然，导入应放在一个 `try ... except` 块中，以防程序作为普通 Python 脚本被外部使用，而没有 bootloader。详细说明参见 [*pyi_splash 模块（详细）*](./advanced-topics.md#pyi_splash-模块详细)。
 
 ## 定义提取位置
 

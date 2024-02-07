@@ -74,7 +74,7 @@ Spec 文件中的语句会创建四个类的实例：`Analysis`、`PYZ`、`EXE` 
   - `pathex`：用于搜索导入的路径列表（比如使用 `PYTHONPATH`），包括由 `--paths` 选项给出的路径；
   - `binaries`：脚本所需的非 Python 模块，包括由 `--add-binary` 选项给出的名称；
   - `datas`：应用程序中包含的非二进制文件，包括由 `--add-data` 选项给出的文件名；
-- 类 `PYZ` 的实例是一个 `.pyz` 归档文件（在 [Inspecting Archives](https://pyinstaller.org/en/v6.3.0/advanced-topics.html#inspecting-archives) 中描述），它包含 `a.pure` 中的所有 Python 模块。
+- 类 `PYZ` 的实例是一个 `.pyz` 归档文件（在[*检视归档*](./advanced-topics.md#检视归档)中描述），它包含 `a.pure` 中的所有 Python 模块。
 - 根据分析的脚本和 `PYZ` 归档创建一个 `EXE` 实例。该对象创建可执行文件。
 - 一个 `COLLECT` 的实例，从其他所有部分创建输出文件夹。
 
@@ -228,7 +228,7 @@ a = Analysis(...
 
 ### 添加文件的高级方法
 
-PyInstaller 支持一种更高级（也更复杂）的将文件添加到捆绑包的方法，可能对特殊情况有用。参阅下方的 [The Table of Contents (TOC) lists and the Tree Class](https://pyinstaller.org/en/v6.3.0/advanced-topics.html#the-toc-and-tree-classes)。
+PyInstaller 支持一种更高级（也更复杂）的将文件添加到捆绑包的方法，可能对特殊情况有用。参阅[*目录（TOC）和 Tree 类*](./advanced-topics.md#目录（TOC）和-tree-类)。
 
 ## 指定 Python 解释器选项
 
@@ -493,7 +493,7 @@ pyinstaller foobarzap.spec
 
 输出至 `dist` 文件夹的将是全部三个应用程序，但应用程序 `dist/bar` 和 `dist/zap` 将引用 `dist/foo` 中的内容以共享依赖关系。
 
-记住，spec 文件是可执行的 Python。在创建 Analysis 对象和执行 `PYZ`、`EXE`、`COLLECT` 语句时，可以使用所有的 Python 工具（`for`、`with` 以及标准库 `sys` 和 `io` 的成员）。你可能还需要了解 [The Table of Contents (TOC) lists and the Tree Class](https://pyinstaller.org/en/v6.3.0/advanced-topics.html#the-toc-and-tree-classes)。
+记住，spec 文件是可执行的 Python。在创建 Analysis 对象和执行 `PYZ`、`EXE`、`COLLECT` 语句时，可以使用所有的 Python 工具（`for`、`with` 以及标准库 `sys` 和 `io` 的成员）。你可能还需要了解[*目录（TOC）和 Tree 类*](./advanced-topics.md#目录（TOC）和-tree-类)。
 
 ## Spec 文件中可用的全局变量
 

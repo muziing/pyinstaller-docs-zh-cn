@@ -71,7 +71,7 @@ PyInstaller bootloader 是当前活动平台（Windows、GNU/Linux、macOS 等�
 
 Bootloader 会启动一个 Python 解释器的拷贝来执行你的脚本。只要包含了所有必须的支持文件，一切都会正常进行。
 
-（这只是一个概述。更多详情，参阅 [The Bootstrap Process in Detail](https://pyinstaller.org/en/v6.3.0/advanced-topics.html#the-bootstrap-process-in-detail)。）
+（这只是一个概述。更多详情，参阅 [*Bootstrap 流程详解*](./advanced-topics.md#bootstrap-流程详解)。）
 
 ## 捆绑至单个文件
 
